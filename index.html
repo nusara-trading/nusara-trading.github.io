@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nusara Trading | Indonesian Spices and Botanicals</title>
+  <meta name="description" content="Nusara Trading connects buyers with Indonesian vanilla, cacao, tea and cinnamon, sourced directly from trusted suppliers. Based in Sweden.">
+  <meta property="og:title" content="Nusara Trading">
+  <meta property="og:description" content="Indonesian vanilla, cacao, tea and cinnamon, sourced directly from trusted suppliers.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%235a3a22'/><text x='32' y='43' font-size='32' text-anchor='middle' fill='%23f3e7d3' font-family='Georgia'>N</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f7f0e3;
+      --sand: #ece0c8;
+      --cacao: #3b2416;
+      --bark: #5a3a22;
+      --cinnamon: #b4592d;
+      --leaf: #4f6b3a;
+      --ink: #241a12;
+      --muted: #6d5c4b;
+      --white: #fffdf8;
+      --radius: 14px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; margin: 0 0 .5em; }
+    a { color: var(--cinnamon); }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247, 240, 227, .92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--sand);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--cacao); font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 1.25rem; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 50%; background: var(--bark); color: var(--cream); display: grid; place-items: center; font-size: 1.05rem; }
+    .nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+    .nav a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: .95rem; }
+    .nav a:hover { color: var(--cinnamon); }
+    .menu-btn { display: none; background: none; border: 0; font-size: 1.6rem; color: var(--cacao); cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(180, 89, 45, .25), transparent 45%),
+        radial-gradient(circle at 10% 90%, rgba(79, 107, 58, .25), transparent 40%),
+        var(--cacao);
+      color: var(--cream);
+      padding: 110px 0 100px;
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 600; color: #e7b88f; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); max-width: 16ch; }
+    .hero p { font-size: 1.15rem; max-width: 52ch; color: #eadcc6; }
+    .btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-block; padding: 13px 24px; border-radius: 999px; font-weight: 600; text-decoration: none; transition: transform .15s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--cinnamon); color: var(--white); }
+    .btn-ghost { border: 1.5px solid #c9b293; color: var(--cream); }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .section-head { max-width: 640px; margin-bottom: 44px; }
+    .section-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--cacao); }
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+    /* Products */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .card { background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius); padding: 28px; }
+    .card .icon { width: 54px; height: 54px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 18px; }
+    .card h3 { font-size: 1.35rem; color: var(--cacao); }
+    .card p { color: var(--muted); margin: 0 0 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: .78rem; background: var(--cream); border: 1px solid var(--sand); border-radius: 999px; padding: 3px 10px; color: var(--bark); }
+
+    /* About / How */
+    .about { background: var(--sand); }
+    .two-col { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+    .facts { display: grid; gap: 16px; }
+    .fact { background: var(--white); border-radius: var(--radius); padding: 20px 22px; border-left: 4px solid var(--cinnamon); }
+    .fact strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.15rem; color: var(--cacao); }
+    .fact span { color: var(--muted); font-size: .95rem; }
+
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 22px; }
+    .step { position: relative; padding: 26px 22px 22px; background: var(--white); border-radius: var(--radius); border: 1px solid var(--sand); }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      position: absolute; top: -16px; left: 22px;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--leaf); color: var(--white); display: grid; place-items: center;
+      font-weight: 600;
+    }
+    .step h3 { font-size: 1.1rem; margin-top: 6px; color: var(--cacao); }
+    .step p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    /* Contact */
+    .contact { background: var(--cacao); color: var(--cream); }
+    .contact h2 { color: var(--cream); }
+    .contact .section-head p { color: #d9c7ad; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .contact-card { background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); border-radius: var(--radius); padding: 24px; }
+    .contact-card h3 { font-size: 1.05rem; color: #e7b88f; font-family: "Inter", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-card a, .contact-card p { color: var(--cream); font-size: 1.1rem; margin: 0; text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer { background: #2a190f; color: #b9a58b; font-size: .9rem; padding: 26px 0; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+    @media (max-width: 760px) {
+      .menu-btn { display: block; }
+      .nav ul {
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--cream); border-bottom: 1px solid var(--sand);
+      }
+      .nav ul.open { display: flex; }
+      .nav li a { display: block; padding: 14px 20px; }
+      .two-col { grid-template-columns: 1fr; gap: 36px; }
+      section { padding: 64px 0; }
+      .hero { padding: 80px 0 70px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top"><span class="brand-mark">N</span>Nusara Trading</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">&#9776;</button>
+    <ul id="menu">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#how">How we work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">From the Indonesian archipelago</div>
+      <h1>Indonesian spices and botanicals, sourced at origin.</h1>
+      <p>Nusara Trading connects buyers with vanilla, cacao, tea and cinnamon from trusted Indonesian suppliers. We handle the sourcing so you can focus on your product.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#contact">Request a quote</a>
+        <a class="btn btn-ghost" href="#products">See products</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our products</h2>
+        <p>We start with four core commodities. Grades, volumes and specifications are agreed per order. Ask us for samples and current availability.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon" style="background:#f3e3c3" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#5a3a22" stroke-width="2" stroke-linecap="round"><path d="M8 28C12 18 18 10 26 4"/><path d="M11 27c3-8 8-15 15-20"/><circle cx="24" cy="7" r="2" fill="#5a3a22"/></svg>
+          </div>
+          <h3>Vanilla</h3>
+          <p>Cured vanilla beans from Indonesian growing regions, selected for aroma and moisture content.</p>
+          <div class="tags"><span class="tag">Whole beans</span><span class="tag">Grade on request</span></div>
+        </article>
+        <article class="card">
+          <div class="icon" style="background:#e6d3c2" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#3b2416" stroke-width="2"><ellipse cx="16" cy="16" rx="8" ry="12"/><path d="M16 4v24M10 9c3 2 9 2 12 0M10 23c3-2 9-2 12 0"/></svg>
+          </div>
+          <h3>Cacao</h3>
+          <p>Cacao beans for chocolate makers and processors, available fermented and dried.</p>
+          <div class="tags"><span class="tag">Fermented</span><span class="tag">Dried beans</span></div>
+        </article>
+        <article class="card">
+          <div class="icon" style="background:#dfe6d2" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#4f6b3a" stroke-width="2" stroke-linecap="round"><path d="M6 26C6 14 14 6 26 6c0 12-8 20-20 20z"/><path d="M6 26L20 12"/></svg>
+          </div>
+          <h3>Tea</h3>
+          <p>Black and green teas from highland estates, supplied in bulk for blenders and packers.</p>
+          <div class="tags"><span class="tag">Black</span><span class="tag">Green</span><span class="tag">Bulk</span></div>
+        </article>
+        <article class="card">
+          <div class="icon" style="background:#f0d6c6" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b4592d" stroke-width="2" stroke-linecap="round"><path d="M7 25L25 7"/><path d="M11 27L27 11"/><path d="M5 21L21 5"/></svg>
+          </div>
+          <h3>Cinnamon</h3>
+          <p>Indonesian cassia cinnamon in sticks and broken grades, for food manufacturers and spice brands.</p>
+          <div class="tags"><span class="tag">Sticks</span><span class="tag">Broken</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap two-col">
+      <div>
+        <div class="section-head" style="margin-bottom:20px">
+          <h2>About Nusara</h2>
+        </div>
+        <p>Nusara Trading is a Sweden-based trading company specialising in Indonesian agricultural products. We work directly with suppliers across Indonesia and act as a reliable link between origin and buyers abroad.</p>
+        <p>Our team combines long experience in export and import with a hands-on relationship with each supplier. We start with spices and botanicals and plan to add more Indonesian goods over time.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>Export experience since 2008</strong><span>Years of practice in international trade and supplier relations.</span></div>
+        <div class="fact"><strong>Direct supplier network</strong><span>We know who grows and processes what we sell.</span></div>
+        <div class="fact"><strong>Based in Sweden</strong><span>A European point of contact for buyers.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How we work</h2>
+        <p>A simple, transparent process from first enquiry to shipment.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Enquiry</h3><p>Tell us the product, grade, volume and destination you need.</p></div>
+        <div class="step"><h3>Samples and quote</h3><p>We source matching lots and send a quotation, with samples on request.</p></div>
+        <div class="step"><h3>Agreement</h3><p>We confirm specifications, price and terms. We trade on FOB terms from Indonesian ports.</p></div>
+        <div class="step"><h3>Shipment</h3><p>The supplier prepares and loads the goods, and we follow up until they are on board.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Looking for a reliable source of Indonesian spices? Send us your requirements and we will get back to you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <!-- TODO: replace with the real address once email is set up -->
+          <a href="mailto:info@example.com?subject=Enquiry%20from%20website">info@example.com</a>
+        </div>
+        <div class="contact-card">
+          <h3>Phone / WhatsApp</h3>
+          <!-- TODO: replace with real number -->
+          <a href="https://wa.me/46000000000">+46 00 000 00 00</a>
+        </div>
+        <div class="contact-card">
+          <h3>Location</h3>
+          <!-- TODO: add city once the company address is set -->
+          <p>Sweden</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Nusara Trading</span>
+    <span>Indonesian spices and botanicals</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('menu');
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+</body>
+</html>
